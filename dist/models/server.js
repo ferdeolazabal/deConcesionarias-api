@@ -42,11 +42,11 @@ class Server {
                 yield config_1.sequelizeConnection.sync({ force: true });
                 (yield PropertyCategory_1.PropertyCategory.bulkCreate(propertyCategory_1.initialCategories))
                     ? console.log("|---PropertyCategory---| Created")
-                    : console.log("|---PropertyCategory---| not created");
+                    : console.log("|---PropertyCategory---| Not created");
                 (yield VehicleProperty_1.VehicleProperty.bulkCreate(vehicleProperty_1.initialProperties))
                     ? console.log("|----VehicleProperty---| Created")
-                    : console.log("|----VehicleProperty---| not created");
-                console.log('Connection has been established successfully.');
+                    : console.log("|----VehicleProperty---| Not created");
+                console.log('Connection has been established successfully!');
             }
             catch (error) {
                 console.log('Unable to connect to the database:', error);

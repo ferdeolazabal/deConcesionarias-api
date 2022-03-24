@@ -46,13 +46,19 @@ export const getVehicle = async (req: Request, res: Response) => {
     try {
     
         const { id } = req.params;
+
         const vehicle = await Vehicle.findByPk(id, {
             include: [{ model: PropertyValue }]
+        });
+
+        const count = await PropertyValue.count({
+            where: { vehicle_FK: id }
         });
 
         res.json({
             ok: true,
             msg: `Vehiculo con id ${ id } recibido correctamente`,
+            count: `Vehiculo con ${ count } propiedades valoradas`,
             vehicle
         });
 

@@ -106,10 +106,6 @@ export const initialProperties = [
         "name": "Ruedas",
         property_category_FK: 2,
     },
-    {
-        "name": "Ruedas",
-        property_category_FK: 2,
-    },
 // ];
 
 // const carroceria = [

@@ -37,13 +37,13 @@ class Server{
             
             (await PropertyCategory.bulkCreate(initialCategories))
                 ? console.log("|---PropertyCategory---| Created")
-                : console.log("|---PropertyCategory---| not created");
+                : console.log("|---PropertyCategory---| Not created");
             
             (await VehicleProperty.bulkCreate(initialProperties))
                 ? console.log("|----VehicleProperty---| Created")
-                : console.log("|----VehicleProperty---| not created");
+                : console.log("|----VehicleProperty---| Not created");
             
-            console.log('Connection has been established successfully.');
+            console.log('Connection has been established successfully!');
 
         } catch (error) {
             console.log('Unable to connect to the database:', error);

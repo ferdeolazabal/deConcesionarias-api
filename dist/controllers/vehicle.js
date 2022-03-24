@@ -52,9 +52,13 @@ const getVehicle = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         const vehicle = yield Vehicle_1.Vehicle.findByPk(id, {
             include: [{ model: PropertyValue_1.PropertyValue }]
         });
+        const count = yield PropertyValue_1.PropertyValue.count({
+            where: { vehicle_FK: id }
+        });
         res.json({
             ok: true,
             msg: `Vehiculo con id ${id} recibido correctamente`,
+            count: `Vehiculo con ${count} propiedades valoradas`,
             vehicle
         });
     }
