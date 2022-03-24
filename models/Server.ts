@@ -33,7 +33,7 @@ class Server{
 
         try {
             await sequelizeConnection.authenticate();
-            await sequelizeConnection.sync({ force: true });
+            await sequelizeConnection.sync({ force: false });
             
             (await PropertyCategory.bulkCreate(initialCategories))
                 ? console.log("|---PropertyCategory---| Created")
