@@ -6,28 +6,17 @@ import { Vehicle } from "../models/Vehicle";
 export const getVehicles = async (req: Request, res: Response) => {
 
     try {
-        // const vehicles = await Vehicle.findAll();
-        // incluir tabla de propiedades
+
         const vehicles = await Vehicle.findAll({
             
             include: [{ model: PropertyValue }],
-            
-            // include: [{
-            //     model: PropertyValue,
-            //     as: 'property_values',
-            //     attributes: ['id', 'value'],
-            //     through: {
-            //         attributes: [
-            //             'id', 'vehicle_FK', 'vehicle_property_FK', 'value'
-            //         ]
-            //     }
-            // }]
+
         });
         const count = await Vehicle.count();
         
         res.json({
             ok: true,
-            msg: 'Vehiculos recibidos correctamente',
+            msg: 'Vehiculos recibidos correctamente!',
             count: count,
             vehicles
         });

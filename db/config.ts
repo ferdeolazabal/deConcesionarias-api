@@ -17,5 +17,5 @@ export const sequelizeConnection = new Sequelize( dbName, dbUser , dbPassword, {
     dialect: 'postgres',
     logging: false,
     models: [PropertyValue, PropertyCategory, Vehicle, VehicleProperty],
-    dialectOptions: { ssl: { rejectUnauthorized: false } },
+    // dialectOptions: { ssl: { rejectUnauthorized: false } },
 });
