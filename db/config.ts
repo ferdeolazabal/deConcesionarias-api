@@ -14,12 +14,12 @@ const dbUser     = process.env.DB_USER as string
 const dbPassword = process.env.DB_PASSWORD as string
 const dbHost     = process.env.DB_HOST as string
 
-// export const sequelizeConnection = new Sequelize( dbName, dbUser , dbPassword, {
-export const sequelizeConnection = new Sequelize( `${DATABASE_URL}` , {
+export const sequelizeConnection = new Sequelize( dbName, dbUser , dbPassword, {
+// export const sequelizeConnection = new Sequelize( `${DATABASE_URL}` , {
     host: dbHost,
     dialect: 'postgres',
     logging: false,
     native: false,
     models: [PropertyValue, PropertyCategory, Vehicle, VehicleProperty],
-    dialectOptions: { ssl: { rejectUnauthorized: false } },
+    // dialectOptions: { ssl: { rejectUnauthorized: false } },
 });
