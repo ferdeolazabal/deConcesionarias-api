@@ -37,7 +37,7 @@ class Server{
             
             (await PropertyCategory.bulkCreate(initialCategories))
                 ? console.log("|---PropertyCategory---| Created")
-                : console.log("|---PropertyCategory---| Not created");
+                : console.log("|---PropertyCategory---| Not created!");
             
             (await VehicleProperty.bulkCreate(initialProperties))
                 ? console.log("|----VehicleProperty---| Created")
