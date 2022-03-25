@@ -11,8 +11,10 @@ const dbName     = process.env.DB_NAME as string
 const dbUser     = process.env.DB_USER as string
 const dbPassword = process.env.DB_PASSWORD as string
 const dbHost     = process.env.DB_HOST as string
+const dbUrl     = process.env.DB_DATABASE_URL as string
 
-export const sequelizeConnection = new Sequelize( dbName, dbUser , dbPassword, {
+// export const sequelizeConnection = new Sequelize( dbName, dbUser , dbPassword, {
+export const sequelizeConnection = new Sequelize( `${ dbUrl }`, {
     host: dbHost,
     dialect: 'postgres',
     logging: false,
