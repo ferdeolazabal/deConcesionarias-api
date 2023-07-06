@@ -34,7 +34,6 @@ if (process.env.NODE_ENV === "production") {
     throw new Error("DATABASE_URL must be set");
   }
   if (DATABASE_URL) {
-    console.log("DATABASE_URL: ", DATABASE_URL);
     sequelizeConnection = new Sequelize(DATABASE_URL, {
       host: dbHost,
       dialect: "postgres",
